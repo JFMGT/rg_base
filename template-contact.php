@@ -3,7 +3,7 @@
  * Template Name: Kontakt
  * Template for displaying contact page
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
@@ -26,10 +26,10 @@ get_header();
                     <h2 style="margin-bottom: 2rem;">Kontaktinformationen</h2>
                     
                     <?php
-                    $phone = get_theme_mod('physio_phone');
-                    $email = get_theme_mod('physio_email');
-                    $address = get_theme_mod('physio_address');
-                    $hours = get_theme_mod('physio_hours');
+                    $phone = get_theme_mod('master_phone');
+                    $email = get_theme_mod('master_email');
+                    $address = get_theme_mod('master_address');
+                    $hours = get_theme_mod('master_hours');
                     ?>
                     
                     <?php if ($address) : ?>
@@ -93,7 +93,7 @@ get_header();
                             <div class="contact-icon">✉️</div>
                             <div class="contact-details">
                                 <h4>E-Mail</h4>
-                                <p><a href="mailto:info@praxis.de">info@praxis.de</a></p>
+                                <p><a href="mailto:info@example.com">info@example.com</a></p>
                             </div>
                         </div>
                         

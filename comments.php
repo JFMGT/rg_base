@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 if (post_password_required()) {
@@ -18,12 +18,12 @@ if (post_password_required()) {
             $comment_count = get_comments_number();
             if ('1' === $comment_count) {
                 printf(
-                    esc_html__('Ein Kommentar zu &ldquo;%1$s&rdquo;', 'physio-therapy-pro'),
+                    esc_html__('Ein Kommentar zu &ldquo;%1$s&rdquo;', 'master-therapy-pro'),
                     '<span>' . wp_kses_post(get_the_title()) . '</span>'
                 );
             } else {
                 printf(
-                    esc_html(_nx('%1$s Kommentar zu &ldquo;%2$s&rdquo;', '%1$s Kommentare zu &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'physio-therapy-pro')),
+                    esc_html(_nx('%1$s Kommentar zu &ldquo;%2$s&rdquo;', '%1$s Kommentare zu &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'master-therapy-pro')),
                     number_format_i18n($comment_count),
                     '<span>' . wp_kses_post(get_the_title()) . '</span>'
                 );
@@ -37,7 +37,7 @@ if (post_password_required()) {
                 'style'       => 'ol',
                 'short_ping'  => true,
                 'avatar_size' => 50,
-                'callback'    => 'physio_comment_callback',
+                'callback'    => 'master_comment_callback',
             ));
             ?>
         </ol>
@@ -48,7 +48,7 @@ if (post_password_required()) {
         if (!comments_open()) :
             ?>
             <p class="no-comments" style="padding: 1.5rem; background: var(--color-background); border-radius: var(--radius-md); text-align: center;">
-                <?php esc_html_e('Kommentare sind geschlossen.', 'physio-therapy-pro'); ?>
+                <?php esc_html_e('Kommentare sind geschlossen.', 'master-therapy-pro'); ?>
             </p>
         <?php
         endif;
@@ -56,11 +56,11 @@ if (post_password_required()) {
     endif;
 
     comment_form(array(
-        'title_reply'         => __('Kommentar schreiben', 'physio-therapy-pro'),
-        'title_reply_to'      => __('Antwort auf %s', 'physio-therapy-pro'),
-        'cancel_reply_link'   => __('Antwort abbrechen', 'physio-therapy-pro'),
-        'label_submit'        => __('Kommentar absenden', 'physio-therapy-pro'),
-        'comment_field'       => '<p class="comment-form-comment"><label for="comment">' . _x('Kommentar', 'noun', 'physio-therapy-pro') . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem;"></textarea></p>',
+        'title_reply'         => __('Kommentar schreiben', 'master-therapy-pro'),
+        'title_reply_to'      => __('Antwort auf %s', 'master-therapy-pro'),
+        'cancel_reply_link'   => __('Antwort abbrechen', 'master-therapy-pro'),
+        'label_submit'        => __('Kommentar absenden', 'master-therapy-pro'),
+        'comment_field'       => '<p class="comment-form-comment"><label for="comment">' . _x('Kommentar', 'noun', 'master-therapy-pro') . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem;"></textarea></p>',
         'class_submit'        => 'btn-primary',
     ));
     ?>
@@ -71,7 +71,7 @@ if (post_password_required()) {
 /**
  * Custom comment callback
  */
-function physio_comment_callback($comment, $args, $depth) {
+function master_comment_callback($comment, $args, $depth) {
     $tag = ('div' === $args['style']) ? 'div' : 'li';
     ?>
     <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(empty($args['has_children']) ? '' : 'parent'); ?> style="margin-bottom: 2rem; padding: 1.5rem; background: var(--color-background); border-radius: var(--radius-md);">
@@ -95,20 +95,20 @@ function physio_comment_callback($comment, $args, $depth) {
                             <time datetime="<?php comment_time('c'); ?>">
                                 <?php
                                 printf(
-                                    _x('%1$s um %2$s', '1: date, 2: time', 'physio-therapy-pro'),
+                                    _x('%1$s um %2$s', '1: date, 2: time', 'master-therapy-pro'),
                                     get_comment_date('', $comment),
                                     get_comment_time()
                                 );
                                 ?>
                             </time>
                         </a>
-                        <?php edit_comment_link(__('Bearbeiten', 'physio-therapy-pro'), ' <span class="edit-link">', '</span>'); ?>
+                        <?php edit_comment_link(__('Bearbeiten', 'master-therapy-pro'), ' <span class="edit-link">', '</span>'); ?>
                     </div>
                 </div>
 
                 <?php if ('0' == $comment->comment_approved) : ?>
                     <em class="comment-awaiting-moderation" style="display: block; padding: 0.75rem; background: #fff3cd; border-radius: var(--radius-sm); margin-bottom: 1rem;">
-                        <?php _e('Ihr Kommentar wartet auf Freigabe.', 'physio-therapy-pro'); ?>
+                        <?php _e('Ihr Kommentar wartet auf Freigabe.', 'master-therapy-pro'); ?>
                     </em>
                 <?php endif; ?>
 

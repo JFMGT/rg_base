@@ -2,7 +2,7 @@
 /**
  * The template for displaying service archive
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
@@ -12,9 +12,9 @@ get_header();
     
     <div class="page-header" style="background: linear-gradient(135deg, rgb(31, 167, 160) 48%, rgb(139, 197, 63) 97%); padding: 3rem 0;">
         <div class="container">
-            <h1 style="color: white; margin: 0;">Unsere Leistungen</h1>
+            <h1 style="color: white; margin: 0;">Unsere Services</h1>
             <p style="margin-top: 1rem; font-size: 1.1rem;">
-                Professionelle Physiotherapie für Ihre Gesundheit
+                Professionelle Dienstleistungen für Ihre Bedürfnisse
             </p>
         </div>
     </div>
@@ -45,7 +45,7 @@ get_header();
                                     );
                                     echo wp_kses($icon, $allowed_html);
                                 } else {
-                                    echo '🏥';
+                                    echo '🛠️';
                                 }
                                 ?>
                             </div>
@@ -83,8 +83,8 @@ get_header();
                 <?php
                 the_posts_pagination(array(
                     'mid_size'  => 2,
-                    'prev_text' => __('← Zurück', 'physio-therapy-pro'),
-                    'next_text' => __('Weiter →', 'physio-therapy-pro'),
+                    'prev_text' => __('← Zurück', 'master-therapy-pro'),
+                    'next_text' => __('Weiter →', 'master-therapy-pro'),
                 ));
                 ?>
 
@@ -92,7 +92,7 @@ get_header();
                 
                 <div style="text-align: center; padding: 3rem 0;">
                     <p style="font-size: 1.25rem; color: var(--color-text-light);">
-                        Keine Leistungen gefunden.
+                        Keine Services gefunden.
                     </p>
                 </div>
 
@@ -105,8 +105,8 @@ get_header();
     <section class="hero-section" style="min-height: 300px;">
         <div class="container">
             <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 style="color: white;">Haben Sie Fragen zu unseren Leistungen?</h2>
-                <p style="font-size: 1.1rem;">Wir beraten Sie gerne persönlich und finden die passende Behandlung für Sie.</p>
+                <h2 style="color: white;">Haben Sie Fragen zu unseren Services?</h2>
+                <p style="font-size: 1.1rem;">Wir beraten Sie gerne persönlich und finden die passende Lösung für Sie.</p>
                 <div class="hero-buttons" style="justify-content: center;">
                     <a href="<?php echo esc_url(home_url('/kontakt')); ?>" class="btn-secondary">Jetzt Kontakt aufnehmen</a>
                 </div>

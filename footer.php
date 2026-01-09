@@ -16,7 +16,7 @@
                 <div class="footer-widget">
                     <h3>Öffnungszeiten</h3>
                     <?php
-                    $hours = get_theme_mod('physio_hours');
+                    $hours = get_theme_mod('master_hours');
                     if ($hours) :
                         echo '<p>' . nl2br(esc_html($hours)) . '</p>';
                     else :
@@ -31,9 +31,9 @@
                <div class="footer-widget">
                     <h3>Kontakt</h3>
                     <?php
-                    $phone = get_theme_mod('physio_phone');
-                    $email = get_theme_mod('physio_email');
-                    $address = get_theme_mod('physio_address');
+                    $phone = get_theme_mod('master_phone');
+                    $email = get_theme_mod('master_email');
+                    $address = get_theme_mod('master_address');
                     
                     if ($phone) :
                         echo '<p>Tel: <a href="tel:' . esc_attr($phone) . '">' . esc_html($phone) . '</a></p>';
@@ -71,7 +71,7 @@
         <div class="footer-bottom">
             <?php
             // Footer Logo - Check for footer-specific logo first, fallback to header logo
-            $footer_logo = get_theme_mod('physio_footer_logo');
+            $footer_logo = get_theme_mod('master_footer_logo');
             $header_logo = get_theme_mod('custom_logo');
             $logo_to_use = $footer_logo ? $footer_logo : $header_logo;
 
@@ -87,7 +87,7 @@
             }
 
             // Copyright Text with placeholder support
-            $copyright = get_theme_mod('physio_copyright', sprintf(__('© %d %s. Alle Rechte vorbehalten.', 'physio-therapy-pro'), date('Y'), get_bloginfo('name')));
+            $copyright = get_theme_mod('master_copyright', sprintf(__('© %d %s. Alle Rechte vorbehalten.', 'master-therapy-pro'), date('Y'), get_bloginfo('name')));
 
             // Replace placeholders
             $copyright = str_replace('{year}', date('Y'), $copyright);
@@ -96,8 +96,8 @@
             echo '<p class="footer-copyright">' . wp_kses_post($copyright) . '</p>';
 
             // Social Media Icons - Only show if enabled in Customizer
-            if (get_theme_mod('physio_footer_social', true)) {
-                physio_social_media_icons('footer-social');
+            if (get_theme_mod('master_footer_social', true)) {
+                master_social_media_icons('footer-social');
             }
             ?>
             

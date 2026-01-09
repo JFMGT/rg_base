@@ -2,7 +2,7 @@
 /**
  * The template for displaying pages
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
@@ -43,7 +43,7 @@ get_header();
                     the_content();
 
                     wp_link_pages(array(
-                        'before' => '<div class="page-links">' . esc_html__('Seiten:', 'physio-therapy-pro'),
+                        'before' => '<div class="page-links">' . esc_html__('Seiten:', 'master-therapy-pro'),
                         'after'  => '</div>',
                     ));
                     ?>

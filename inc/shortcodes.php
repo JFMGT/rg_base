@@ -2,13 +2,13 @@
 /**
  * Shortcodes for Dynamic Content
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 /**
  * Services Shortcode
  */
-function physio_services_shortcode($atts) {
+function master_services_shortcode($atts) {
     $atts = shortcode_atts(array(
         'limit' => 6,
     ), $atts);
@@ -98,12 +98,12 @@ function physio_services_shortcode($atts) {
     <?php
     return ob_get_clean();
 }
-add_shortcode('physio_services', 'physio_services_shortcode');
+add_shortcode('master_services', 'master_services_shortcode');
 
 /**
  * Team Shortcode
  */
-function physio_team_shortcode($atts) {
+function master_team_shortcode($atts) {
     $atts = shortcode_atts(array(
         'limit' => -1,
     ), $atts);
@@ -128,7 +128,7 @@ function physio_team_shortcode($atts) {
                 <div class="team-member">
                     <div class="team-member-image">
                         <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('physio-team'); ?>
+                            <?php the_post_thumbnail('master-team'); ?>
                         <?php else : ?>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect fill='%232D7D8E' width='400' height='500'/%3E%3Ccircle cx='200' cy='200' r='80' fill='white' opacity='0.3'/%3E%3Cpath d='M200 280 Q150 320 100 500 L300 500 Q250 320 200 280 Z' fill='white' opacity='0.3'/%3E%3C/svg%3E" alt="<?php the_title(); ?>">
                         <?php endif; ?>
@@ -177,12 +177,12 @@ function physio_team_shortcode($atts) {
     <?php
     return ob_get_clean();
 }
-add_shortcode('physio_team', 'physio_team_shortcode');
+add_shortcode('master_team', 'master_team_shortcode');
 
 /**
  * Testimonials Shortcode
  */
-function physio_testimonials_shortcode($atts) {
+function master_testimonials_shortcode($atts) {
     $atts = shortcode_atts(array(
         'limit' => 4,
     ), $atts);
@@ -269,4 +269,4 @@ function physio_testimonials_shortcode($atts) {
     <?php
     return ob_get_clean();
 }
-add_shortcode('physio_testimonials', 'physio_testimonials_shortcode');
+add_shortcode('master_testimonials', 'master_testimonials_shortcode');

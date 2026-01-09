@@ -6,7 +6,7 @@
  * You can now add and arrange sections using the Block Patterns from the
  * "Physio Sektionen" category in the WordPress editor.
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();

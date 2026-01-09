@@ -2,7 +2,7 @@
 /**
  * The template for displaying single service
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
@@ -71,14 +71,14 @@ get_header();
 
                     <!-- Service Details Box -->
                     <div style="background: var(--color-background); border-radius: var(--radius-lg); padding: 2rem; margin-top: 3rem; border: 4px solid var(--color-primary);">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Details zur Behandlung</h3>
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Service Details</h3>
                         
                         <div style="display: grid; gap: 1rem;">
                             <?php if ($duration) : ?>
                                 <div style="display: flex; gap: 1rem; align-items: start;">
                                     <span style="font-size: 1.5rem;"><i class="fa-solid fa-stopwatch"></i></span>
                                     <div>
-                                        <strong>Behandlungsdauer:</strong><br>
+                                        <strong>Dauer:</strong><br>
                                         <?php echo esc_html($duration); ?>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@ get_header();
                                 <span style="font-size: 1.5rem;"><i class="fa-solid fa-clipboard"></i></span>
                                 <div>
                                     <strong>Verordnung:</strong><br>
-                                    Auf ärztliche Verordnung oder als Privatleistung
+                                    Auf ärztliche Verordnung oder als Privatservice
                                 </div>
                             </div>
                             
@@ -114,7 +114,7 @@ get_header();
 
                     <!-- CTA Box -->
                     <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); border-radius: var(--radius-lg); padding: 3rem; margin-top: 3rem; text-align: center; color: white;">
-                        <h3 style="color: white; margin-bottom: 1rem;">Interessiert an dieser Behandlung?</h3>
+                        <h3 style="color: white; margin-bottom: 1rem;">Interessiert an diesem Service?</h3>
                         <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">
                             Vereinbaren Sie jetzt einen Termin für eine individuelle Beratung.
                         </p>
@@ -122,7 +122,7 @@ get_header();
                             <a href="<?php echo esc_url(home_url('/kontakt')); ?>" class="btn-secondary">
                                 Termin vereinbaren
                             </a>
-                            <a href="tel:<?php echo esc_attr(get_theme_mod('physio_phone', '')); ?>" class="btn-outline" style="background: transparent; color: white; border-color: white;">
+                            <a href="tel:<?php echo esc_attr(get_theme_mod('master_phone', '')); ?>" class="btn-outline" style="background: transparent; color: white; border-color: white;">
                                 Direkt anrufen
                             </a>
                         </div>
@@ -130,7 +130,7 @@ get_header();
 
                     <!-- Navigation to other services -->
                     <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--color-border);">
-                        <h3 style="margin-bottom: 1.5rem;">Weitere Leistungen</h3>
+                        <h3 style="margin-bottom: 1.5rem;">Weitere Services</h3>
                         
                         <?php
                         // Get other services
@@ -179,7 +179,7 @@ get_header();
                         
                         <div style="text-align: center; margin-top: 2rem;">
                             <a href="<?php echo esc_url(get_post_type_archive_link('service')); ?>" class="btn-primary">
-                                Alle Leistungen ansehen
+                                Alle Services ansehen
                             </a>
                         </div>
                     </div>

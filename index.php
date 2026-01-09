@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
@@ -43,7 +43,7 @@ get_header();
                                 <div class="post-meta" style="display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem; color: var(--color-text-light);">
                                     <span><?php echo get_the_date(); ?></span>
                                     <span>•</span>
-                                    <?php physio_reading_time(); ?>
+                                    <?php master_reading_time(); ?>
                                     <span>•</span>
                                     <span><?php the_category(', '); ?></span>
                                 </div>
@@ -71,8 +71,8 @@ get_header();
                 <?php
                 the_posts_pagination(array(
                     'mid_size'  => 2,
-                    'prev_text' => __('← Zurück', 'physio-therapy-pro'),
-                    'next_text' => __('Weiter →', 'physio-therapy-pro'),
+                    'prev_text' => __('← Zurück', 'master-therapy-pro'),
+                    'next_text' => __('Weiter →', 'master-therapy-pro'),
                 ));
                 ?>
                 

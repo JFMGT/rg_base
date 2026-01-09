@@ -35,7 +35,7 @@
     wp.customize.bind('ready', function() {
 
         // Heading Font Control
-        const headingFontControl = wp.customize.control('physio_heading_font');
+        const headingFontControl = wp.customize.control('master_heading_font');
 
         if (headingFontControl) {
             // Füge Empfehlung hinzu wenn Heading-Font geändert wird
@@ -45,7 +45,7 @@
             });
 
             // Initiale Empfehlung anzeigen
-            const currentHeadingFont = wp.customize('physio_heading_font').get();
+            const currentHeadingFont = wp.customize('master_heading_font').get();
             updateFontRecommendation(currentHeadingFont);
         }
     });
@@ -55,7 +55,7 @@
      */
     function updateFontRecommendation(headingFont) {
         const pairing = fontPairings[headingFont];
-        const headingControl = wp.customize.control('physio_heading_font');
+        const headingControl = wp.customize.control('master_heading_font');
 
         // Entferne alte Empfehlung
         headingControl.container.find('.font-recommendation').remove();
@@ -82,14 +82,14 @@
     }
 
     // Live-Vorschau für Fonts (optional)
-    wp.customize('physio_heading_font', function(value) {
+    wp.customize('master_heading_font', function(value) {
         value.bind(function(newval) {
             // Hier könnte Live-Preview implementiert werden
             console.log('Heading Font geändert zu:', newval);
         });
     });
 
-    wp.customize('physio_body_font', function(value) {
+    wp.customize('master_body_font', function(value) {
         value.bind(function(newval) {
             console.log('Body Font geändert zu:', newval);
         });

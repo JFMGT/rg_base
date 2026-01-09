@@ -2,7 +2,7 @@
 /**
  * SEO Functions - Schema.org Markup & Meta Tags
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 if (!defined('ABSPATH')) {
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 /**
  * Add Schema.org JSON-LD for Service Post Type
  */
-function physio_add_service_schema() {
+function master_add_service_schema() {
     if (!is_singular('service')) {
         return;
     }
@@ -23,7 +23,7 @@ function physio_add_service_schema() {
 
     $schema = array(
         '@context' => 'https://schema.org',
-        '@type' => 'MedicalProcedure',
+        '@type' => 'Service',
         'name' => get_the_title(),
         'description' => get_the_excerpt() ?: wp_trim_words(get_the_content(), 30),
         'url' => get_permalink(),
@@ -34,24 +34,24 @@ function physio_add_service_schema() {
     }
 
     if ($duration) {
-        $schema['procedureType'] = $duration;
+        $schema['serviceType'] = $duration;
     }
 
     // Provider Organization
     $schema['provider'] = array(
-        '@type' => 'MedicalOrganization',
+        '@type' => 'Organization',
         'name' => get_bloginfo('name'),
         'url' => home_url(),
     );
 
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }
-add_action('wp_head', 'physio_add_service_schema');
+add_action('wp_head', 'master_add_service_schema');
 
 /**
  * Add Schema.org JSON-LD for Team Member
  */
-function physio_add_team_schema() {
+function master_add_team_schema() {
     if (!is_singular('team')) {
         return;
     }
@@ -92,30 +92,30 @@ function physio_add_team_schema() {
 
     // Work Organization
     $schema['worksFor'] = array(
-        '@type' => 'MedicalOrganization',
+        '@type' => 'Organization',
         'name' => get_bloginfo('name'),
         'url' => home_url(),
     );
 
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }
-add_action('wp_head', 'physio_add_team_schema');
+add_action('wp_head', 'master_add_team_schema');
 
 /**
  * Add Schema.org JSON-LD for Organization (Homepage)
  */
-function physio_add_organization_schema() {
+function master_add_organization_schema() {
     if (!is_front_page()) {
         return;
     }
 
-    $phone = get_theme_mod('physio_phone', '');
-    $email = get_theme_mod('physio_email', '');
-    $address = get_theme_mod('physio_address', '');
+    $phone = get_theme_mod('master_phone', '');
+    $email = get_theme_mod('master_email', '');
+    $address = get_theme_mod('master_address', '');
 
     $schema = array(
         '@context' => 'https://schema.org',
-        '@type' => 'MedicalBusiness',
+        '@type' => 'Organization',
         'name' => get_bloginfo('name'),
         'description' => get_bloginfo('description'),
         'url' => home_url(),
@@ -146,12 +146,12 @@ function physio_add_organization_schema() {
 
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }
-add_action('wp_head', 'physio_add_organization_schema');
+add_action('wp_head', 'master_add_organization_schema');
 
 /**
  * Add Schema.org JSON-LD for Testimonials
  */
-function physio_add_testimonial_schema() {
+function master_add_testimonial_schema() {
     if (!is_singular('testimonial')) {
         return;
     }
@@ -183,19 +183,19 @@ function physio_add_testimonial_schema() {
     }
 
     $schema['itemReviewed'] = array(
-        '@type' => 'MedicalBusiness',
+        '@type' => 'Organization',
         'name' => get_bloginfo('name'),
         'url' => home_url(),
     );
 
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }
-add_action('wp_head', 'physio_add_testimonial_schema');
+add_action('wp_head', 'master_add_testimonial_schema');
 
 /**
  * Add Open Graph Meta Tags
  */
-function physio_add_open_graph_tags() {
+function master_add_open_graph_tags() {
     if (is_singular()) {
         $post_id = get_the_ID();
         ?>
@@ -229,12 +229,12 @@ function physio_add_open_graph_tags() {
     <meta name="twitter:image" content="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'large')); ?>" />
     <?php endif;
 }
-add_action('wp_head', 'physio_add_open_graph_tags');
+add_action('wp_head', 'master_add_open_graph_tags');
 
 /**
  * Add Canonical URL
  */
-function physio_add_canonical_url() {
+function master_add_canonical_url() {
     if (is_singular()) {
         echo '<link rel="canonical" href="' . esc_url(get_permalink()) . '" />' . "\n";
     } elseif (is_home() || is_front_page()) {
@@ -243,15 +243,15 @@ function physio_add_canonical_url() {
         echo '<link rel="canonical" href="' . esc_url(get_post_type_archive_link(get_post_type())) . '" />' . "\n";
     }
 }
-add_action('wp_head', 'physio_add_canonical_url');
+add_action('wp_head', 'master_add_canonical_url');
 
 /**
  * Generate Breadcrumbs
  */
-function physio_breadcrumbs() {
+function master_breadcrumbs() {
     // Settings
     $separator = '<span class="breadcrumb-separator"> / </span>';
-    $home_title = __('Home', 'physiotherapy-pro');
+    $home_title = __('Home', 'master-pro');
 
     // Don't display on homepage
     if (is_front_page()) {
@@ -266,13 +266,13 @@ function physio_breadcrumbs() {
     echo $separator;
 
     if (is_singular('service')) {
-        echo '<li class="breadcrumb-item"><a href="' . esc_url(get_post_type_archive_link('service')) . '">' . __('Leistungen', 'physiotherapy-pro') . '</a></li>';
+        echo '<li class="breadcrumb-item"><a href="' . esc_url(get_post_type_archive_link('service')) . '">' . __('Services', 'master-pro') . '</a></li>';
         echo $separator;
         echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
     } elseif (is_post_type_archive('service')) {
-        echo '<li class="breadcrumb-item active" aria-current="page">' . __('Leistungen', 'physiotherapy-pro') . '</li>';
+        echo '<li class="breadcrumb-item active" aria-current="page">' . __('Services', 'master-pro') . '</li>';
     } elseif (is_singular('team')) {
-        echo '<li class="breadcrumb-item">' . __('Team', 'physiotherapy-pro') . '</li>';
+        echo '<li class="breadcrumb-item">' . __('Team', 'master-pro') . '</li>';
         echo $separator;
         echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
     } elseif (is_singular('post')) {
@@ -303,9 +303,9 @@ function physio_breadcrumbs() {
     } elseif (is_tag()) {
         echo '<li class="breadcrumb-item active" aria-current="page">' . single_tag_title('', false) . '</li>';
     } elseif (is_search()) {
-        echo '<li class="breadcrumb-item active" aria-current="page">' . __('Suchergebnisse für: ', 'physiotherapy-pro') . get_search_query() . '</li>';
+        echo '<li class="breadcrumb-item active" aria-current="page">' . __('Suchergebnisse für: ', 'master-pro') . get_search_query() . '</li>';
     } elseif (is_404()) {
-        echo '<li class="breadcrumb-item active" aria-current="page">' . __('Seite nicht gefunden', 'physiotherapy-pro') . '</li>';
+        echo '<li class="breadcrumb-item active" aria-current="page">' . __('Seite nicht gefunden', 'master-pro') . '</li>';
     }
 
     echo '</ol>';

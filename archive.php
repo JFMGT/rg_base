@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
@@ -68,8 +68,8 @@ get_header();
                 <?php
                 the_posts_pagination(array(
                     'mid_size'  => 2,
-                    'prev_text' => __('← Zurück', 'physio-therapy-pro'),
-                    'next_text' => __('Weiter →', 'physio-therapy-pro'),
+                    'prev_text' => __('← Zurück', 'master-therapy-pro'),
+                    'next_text' => __('Weiter →', 'master-therapy-pro'),
                 ));
                 ?>
                 
