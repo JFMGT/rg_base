@@ -1,0 +1,10 @@
+<svg width="1920" height="800" viewBox="0 0 1920 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="800" fill="url(#paint0_linear)"/>
+  <text x="960" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#ffffff" opacity="0.3">Ersetzen Sie dieses Bild mit Ihrem eigenen</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1920" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1FA7A0"/>
+      <stop offset="1" stop-color="#8BC53F"/>
+    </linearGradient>
+  </defs>
+</svg>

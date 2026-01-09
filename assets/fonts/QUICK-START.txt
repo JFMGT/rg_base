@@ -1,0 +1,67 @@
+╔══════════════════════════════════════════════════════════════╗
+║  SCHNELLSTART: FONTS INSTALLIEREN                            ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 WAS SIE BRAUCHEN:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Outfit:
+  ✓ outfit-regular.woff2    (Normal)
+  ✓ outfit-semibold.woff2   (Fett)
+  ✓ outfit-bold.woff2       (Extra Fett)
+
+Figtree:
+  ✓ figtree-regular.woff2   (Normal)
+  ✓ figtree-medium.woff2    (Medium)
+  ✓ figtree-semibold.woff2  (Fett)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 SCHNELLSTE METHODE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Öffnen Sie: https://gwfh.mranftl.com/fonts/outfit
+   → Wählen: 400, 600, 700
+   → Modern Browsers
+   → Download
+
+2. Öffnen Sie: https://gwfh.mranftl.com/fonts/figtree
+   → Wählen: 400, 500, 600
+   → Modern Browsers
+   → Download
+
+3. Kopieren Sie die WOFF2-Dateien:
+   outfit/*.woff2  → wp-content/themes/physiotherapy-pro/assets/fonts/outfit/
+   figtree/*.woff2 → wp-content/themes/physiotherapy-pro/assets/fonts/figtree/
+
+4. Cache leeren (Browser + WordPress)
+
+5. FERTIG! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 VERZEICHNISSTRUKTUR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/assets/fonts/
+├── outfit/
+│   ├── outfit-regular.woff2
+│   ├── outfit-semibold.woff2
+│   └── outfit-bold.woff2
+└── figtree/
+    ├── figtree-regular.woff2
+    ├── figtree-medium.woff2
+    └── figtree-semibold.woff2
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 WICHTIG:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Nur WOFF2-Format nötig (nicht WOFF, nicht TTF)
+✓ Dateinamen müssen EXAKT stimmen (Kleinschreibung!)
+✓ Ohne Fonts? Kein Problem - System-Fonts werden verwendet
+✓ Gesamtgröße: nur ~66 KB
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Detaillierte Anleitung: Siehe INSTALLATION.md

@@ -1,0 +1,27 @@
+.yourtheme-social-repeater-items {
+  margin: 10px 0;
+}
+
+.yourtheme-social-repeater-item {
+  padding: 10px;
+  border: 1px solid #dcdcde;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.yourtheme-social-repeater-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.yourtheme-social-repeater-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.yourtheme-social-repeater-url-wrap input {
+  width: 100%;
+}

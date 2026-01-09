@@ -1,0 +1,156 @@
+/**
+ * Local Font Definitions
+ *
+ * Diese Datei definiert alle verfügbaren Schriftarten für das Theme.
+ * Die Fonts werden lokal gehostet oder nutzen System-Fonts als Fallback.
+ */
+
+/* ==========================================================================
+   Outfit - Heading Font (Standard)
+   ========================================================================== */
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Outfit'), local('Outfit-Regular'),
+         url('../fonts/outfit/outfit-regular.woff2') format('woff2'),
+         url('../fonts/outfit/outfit-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Outfit SemiBold'), local('Outfit-SemiBold'),
+         url('../fonts/outfit/outfit-semibold.woff2') format('woff2'),
+         url('../fonts/outfit/outfit-semibold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Outfit Bold'), local('Outfit-Bold'),
+         url('../fonts/outfit/outfit-bold.woff2') format('woff2'),
+         url('../fonts/outfit/outfit-bold.woff') format('woff');
+}
+
+/* ==========================================================================
+   Figtree - Body Font (Standard)
+   ========================================================================== */
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Figtree'), local('Figtree-Regular'),
+         url('../fonts/figtree/figtree-regular.woff2') format('woff2'),
+         url('../fonts/figtree/figtree-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('Figtree Medium'), local('Figtree-Medium'),
+         url('../fonts/figtree/figtree-medium.woff2') format('woff2'),
+         url('../fonts/figtree/figtree-medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Figtree SemiBold'), local('Figtree-SemiBold'),
+         url('../fonts/figtree/figtree-semibold.woff2') format('woff2'),
+         url('../fonts/figtree/figtree-semibold.woff') format('woff');
+}
+
+/* ==========================================================================
+   Alternative Fonts - Nutzen System-Fonts als Fallback
+   ========================================================================== */
+
+/* Poppins - Modern sans-serif */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Poppins'), local('Segoe UI'), local('Arial');
+}
+
+/* Montserrat - Geometric sans-serif */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Montserrat'), local('Helvetica Neue'), local('Arial');
+}
+
+/* Raleway - Elegant sans-serif */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Raleway'), local('Helvetica'), local('Arial');
+}
+
+/* Playfair Display - Serif font */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Playfair Display'), local('Georgia'), local('Times New Roman');
+}
+
+/* Inter - Clean sans-serif */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Inter'), local('SF Pro'), local('Segoe UI'), local('Arial');
+}
+
+/* Open Sans - Friendly sans-serif */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Open Sans'), local('Arial'), local('Helvetica');
+}
+
+/* Lato - Humanist sans-serif */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Lato'), local('Helvetica Neue'), local('Arial');
+}
+
+/* Source Sans Pro - Professional sans-serif */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: local('Source Sans Pro'), local('Segoe UI'), local('Arial');
+}
+
+/* ==========================================================================
+   System Font Stack (Ultimate Fallback)
+   ========================================================================== */
+:root {
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-system-serif: Georgia, "Times New Roman", Times, serif;
+}
