@@ -1,7 +1,7 @@
-=== PhysioTherapy Pro ===
+=== Master Pro ===
 
-Contributors: PhysioTheme
-Tags: health, medical, physiotherapy, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: MasterTheme
+Tags: custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, block-styles, flexible-header, custom-logo
 Requires at least: 5.8
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -9,30 +9,31 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Ein professionelles WordPress-Theme für Physiotherapie-Praxen mit vollständiger Customizer-Unterstützung.
+Ein professionelles WordPress Master-Theme mit vollständiger Customizer-Unterstützung - Ideal als Basis für Child-Themes.
 
 == Description ==
 
-PhysioTherapy Pro ist ein modernes, professionelles WordPress-Theme, das speziell für Physiotherapie-Praxen, medizinische Einrichtungen und Gesundheitsdienstleister entwickelt wurde.
+Master Pro ist ein modernes, professionelles WordPress Master-Theme, das als flexible Basis für diverse Branchen entwickelt wurde. Mit umfangreichen Anpassungsmöglichkeiten und sauberer Architektur ist es ideal für Child-Theme-Entwicklung.
 
 = Hauptfunktionen =
 
 * Vollständig responsive Design
 * Customizer-Integration für Farben und Schriftarten
-* Custom Post Types für Leistungen, Team und Bewertungen
+* Custom Post Types für Services, Team und Testimonials
 * Moderne, ansprechende Layouts
-* SEO-optimiert
+* SEO-optimiert mit Schema.org Support
 * Schnelle Ladezeiten
-* Barrierefreie Navigation
+* Barrierefreie Navigation (WCAG-konform)
 * Integration mit gängigen Plugins
 * Mehrere Page Templates
 * Widget-bereite Bereiche
+* Block Editor Support
 
 = Custom Post Types =
 
-* **Leistungen** - Präsentieren Sie Ihre Behandlungsangebote
+* **Services** - Präsentieren Sie Ihre Dienstleistungen und Angebote
 * **Team** - Stellen Sie Ihr Team vor
-* **Bewertungen** - Zeigen Sie Patientenbewertungen
+* **Testimonials** - Zeigen Sie Kundenbewertungen
 
 = Page Templates =
 
@@ -48,16 +49,18 @@ PhysioTherapy Pro ist ein modernes, professionelles WordPress-Theme, das speziel
 * Sekundärfarbe
 * Textfarbe
 * Hintergrundfarbe
-* Überschriften-Schriftart
-* Fließtext-Schriftart
-* Logo
+* Überschriften-Schriftart (10 Google Fonts zur Auswahl)
+* Fließtext-Schriftart (10 Google Fonts zur Auswahl)
+* Logo und Footer Logo
 * Kontaktinformationen (Telefon, E-Mail, Adresse, Öffnungszeiten)
+* Social Media Links
+* Custom 404 Page
 
 == Installation ==
 
 1. Laden Sie das Theme-Paket herunter
 2. Entpacken Sie die ZIP-Datei
-3. Laden Sie den Ordner 'physio-theme' in das Verzeichnis '/wp-content/themes/' hoch
+3. Laden Sie den Ordner 'master-pro' in das Verzeichnis '/wp-content/themes/' hoch
 4. Aktivieren Sie das Theme über das Menü 'Design > Themes' in WordPress
 5. Passen Sie das Theme über 'Design > Customizer' an Ihre Bedürfnisse an
 
@@ -65,7 +68,7 @@ PhysioTherapy Pro ist ein modernes, professionelles WordPress-Theme, das speziel
 
 = Ist das Theme responsive? =
 
-Ja, PhysioTherapy Pro ist vollständig responsive und sieht auf allen Geräten großartig aus.
+Ja, Master Pro ist vollständig responsive und sieht auf allen Geräten großartig aus.
 
 = Kann ich die Farben anpassen? =
 
@@ -75,9 +78,9 @@ Ja, über den WordPress Customizer können Sie alle Hauptfarben des Themes anpas
 
 Ja, es gibt mehrere Widget-Bereiche, darunter eine Sidebar und vier Footer-Widget-Bereiche.
 
-= Wie füge ich Leistungen hinzu? =
+= Wie füge ich Services hinzu? =
 
-Navigieren Sie im WordPress-Admin zu 'Leistungen > Neu hinzufügen'. Dort können Sie neue Leistungen mit Titel, Beschreibung, Icon, Dauer und Preis erstellen.
+Navigieren Sie im WordPress-Admin zu 'Services > Neu hinzufügen'. Dort können Sie neue Services mit Titel, Beschreibung, Icon, Dauer und Preis erstellen.
 
 = Ist das Theme mehrsprachig? =
 
@@ -89,26 +92,32 @@ Das Theme ist translation-ready und kann mit Plugins wie WPML oder Polylang übe
 * Yoast SEO - Für SEO-Optimierung
 * WP Super Cache - Für bessere Performance
 
+= Kann ich Child-Themes erstellen? =
+
+Ja, Master Pro ist speziell als Basis für Child-Themes konzipiert und folgt allen WordPress Best Practices.
+
 == Changelog ==
 
 = 1.0.0 =
 * Erste Veröffentlichung
-* Custom Post Types für Leistungen, Team und Bewertungen
+* Custom Post Types für Services, Team und Testimonials
 * Vollständige Customizer-Integration
 * Responsive Design
 * Multiple Page Templates
 * Widget-Bereiche
+* Block Editor Support
+* SEO Schema Markup
 
 == Credits ==
 
 * Theme entwickelt mit WordPress Best Practices
-* Icons: Emoji und SVG
-* Schriftarten: Google Fonts (Outfit, Figtree)
+* Icons: Font Awesome 7.1
+* Schriftarten: Google Fonts (Outfit, Figtree, Poppins, Montserrat, Raleway, Playfair Display, Inter, Open Sans, Lato, Source Sans Pro)
 
 == Copyright ==
 
-PhysioTherapy Pro WordPress Theme, Copyright 2024
-PhysioTherapy Pro is distributed under the terms of the GNU GPL
+Master Pro WordPress Theme, Copyright 2024
+Master Pro is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

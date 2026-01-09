@@ -2,13 +2,13 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
 
 // Check if a custom 404 page is selected in the Customizer
-$custom_404_page_id = get_theme_mod('physio_404_page_id');
+$custom_404_page_id = get_theme_mod('master_404_page_id');
 
 if ($custom_404_page_id && get_post_status($custom_404_page_id) === 'publish') {
     // Display the custom 404 page
@@ -63,7 +63,7 @@ if ($custom_404_page_id && get_post_status($custom_404_page_id) === 'publish') {
                     <div style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
                     <h3 style="margin-bottom: 1rem;">Zur Startseite</h3>
                     <p style="color: var(--color-text-light); margin-bottom: 1rem;">
-                        Besuchen Sie unsere Startseite für einen Überblick über unsere Praxis.
+                        Besuchen Sie unsere Startseite für einen Überblick.
                     </p>
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="btn-primary">
                         Startseite besuchen
@@ -71,13 +71,13 @@ if ($custom_404_page_id && get_post_status($custom_404_page_id) === 'publish') {
                 </div>
 
                 <div style="padding: 2rem; background: var(--color-background); border-radius: var(--radius-lg);">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏥</div>
-                    <h3 style="margin-bottom: 1rem;">Unsere Leistungen</h3>
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🛠️</div>
+                    <h3 style="margin-bottom: 1rem;">Unsere Services</h3>
                     <p style="color: var(--color-text-light); margin-bottom: 1rem;">
-                        Entdecken Sie unser umfangreiches Behandlungsangebot.
+                        Entdecken Sie unser umfangreiches Service-Angebot.
                     </p>
                     <a href="<?php echo esc_url(get_post_type_archive_link('service')); ?>" class="btn-primary">
-                        Leistungen ansehen
+                        Services ansehen
                     </a>
                 </div>
 

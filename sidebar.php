@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 if (!is_active_sidebar('sidebar-1')) {

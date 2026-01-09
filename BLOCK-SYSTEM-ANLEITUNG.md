@@ -1,121 +1,139 @@
-# Anleitung: Verschiebbare Blöcke auf der Startseite
+# Master Pro - Block Pattern System
 
 ## Übersicht
 
-Ihre Website wurde erfolgreich auf ein flexibles Block-System umgestellt. Sie können jetzt alle Sektionen auf der Startseite frei per Drag & Drop im WordPress-Editor anordnen!
+Master Pro ist ein flexibles WordPress Master-Theme mit einem integrierten Block Pattern System. Das Theme selbst enthält keine vordefinierten Block Patterns, sondern bietet die Infrastruktur für Child-Themes, um eigene Patterns zu registrieren.
 
-## Wie funktioniert es?
+## Block Pattern System
 
-### 1. Startseite bearbeiten
+### Pattern-Registrierung für Child-Themes
 
-1. Loggen Sie sich in WordPress ein
-2. Gehen Sie zu **Seiten** → **Alle Seiten**
-3. Klicken Sie auf **Startseite** (oder "Home")
-4. Der WordPress Block-Editor öffnet sich
+Das Theme stellt ein automatisches Pattern-Ladesystem bereit. Child-Themes können eigene Block Patterns erstellen, indem sie einen `/patterns/` Ordner im Child-Theme anlegen.
 
-### 2. Block-Patterns einfügen
+### Eigene Patterns erstellen
 
-Im Block-Editor finden Sie unter der Kategorie **"Physio Sektionen"** folgende vorgefertigte Sektionen:
+1. Erstellen Sie einen `/patterns/` Ordner in Ihrem Child-Theme
+2. Fügen Sie PHP-Dateien mit Pattern-Definitionen hinzu
+3. Jede Pattern-Datei sollte folgende Header enthalten:
 
-- **Hero Sektion** - Große Einstiegssektion mit Überschrift und Buttons
-- **Leistungen Sektion** - Zeigt Ihre Services an
-- **Über Uns Sektion** - Informationen über Ihre Praxis
-- **Team Sektion** - Stellt Ihr Team vor
-- **Bewertungen Sektion** - Kundenbewertungen
-- **Call-to-Action Sektion** - Abschluss-Sektion mit Kontakt-Aufforderung
+```php
+<?php
+/**
+ * Title: Mein Custom Pattern
+ * Slug: my-theme/custom-pattern
+ * Description: Beschreibung des Patterns
+ * Categories: master-sections
+ */
+?>
 
-### 3. Sektionen hinzufügen
+<!-- Pattern HTML Code hier -->
+```
 
-1. Klicken Sie auf das **+** Symbol im Editor
-2. Suchen Sie nach "Physio" oder scrollen Sie zur Kategorie "Physio Sektionen"
-3. Klicken Sie auf eine Sektion, um sie einzufügen
-4. Die Sektion wird automatisch mit Beispielinhalten gefüllt
+### Verfügbare Pattern-Kategorie
 
-### 4. Sektionen verschieben
+- **master-sections** - Standard-Kategorie für Theme-Sektionen
 
-- Klicken Sie auf eine Sektion
-- Nutzen Sie die Pfeile ↑↓ in der Toolbar, um die Sektion nach oben oder unten zu verschieben
-- Oder ziehen Sie die Sektion per Drag & Drop an die gewünschte Position
+### Neue Kategorien hinzufügen
 
-### 5. Inhalte bearbeiten
+Child-Themes können eigene Pattern-Kategorien registrieren:
 
-Jede Sektion kann direkt im Editor bearbeitet werden:
+```php
+function mytheme_register_block_pattern_category() {
+    register_block_pattern_category(
+        'mytheme-sections',
+        array('label' => __('Meine Sektionen', 'my-textdomain'))
+    );
+}
+add_action('init', 'mytheme_register_block_pattern_category');
+```
 
-- **Texte ändern**: Einfach auf den Text klicken und bearbeiten
-- **Buttons anpassen**: URL und Text der Buttons ändern
-- **Farben ändern**: Über die Toolbar rechts
-- **Bilder austauschen**: Auf das Bild klicken und ersetzen
+## Dynamische Inhalte - Shortcodes
 
-### 6. Button-Stile
+Das Theme bietet Shortcodes für die Anzeige von Custom Post Types:
 
-Für Buttons stehen drei Stile zur Verfügung:
-
-- **Primär** (Türkis) - Hauptaktionen
-- **Sekundär** (Grün) - Zweitaktionen
-- **Umriss** - Transparenter Button mit Rahmen
-
-So ändern Sie den Button-Stil:
-1. Button auswählen
-2. Rechts in der Sidebar unter "Stile" den gewünschten Stil wählen
-
-## Wichtige Dateien
-
-### Neue Dateien
-- `/inc/block-patterns.php` - Definiert die Block-Patterns
-- `/inc/shortcodes.php` - Shortcodes für dynamische Inhalte (Services, Team, Testimonials)
-- `/front-page-static.php` - Backup der alten statischen Startseite
-
-### Geänderte Dateien
-- `/front-page.php` - Neue block-basierte Startseite
-- `/functions.php` - Block-Editor Support aktiviert
-- `/style.css` - Block-Styles hinzugefügt
-
-## Dynamische Inhalte
-
-Die folgenden Sektionen zeigen automatisch Ihre WordPress-Inhalte:
-
-### Services/Leistungen
-Werden aus dem Custom Post Type **"Leistungen"** geladen. Neue Services hinzufügen unter:
-**WordPress Admin** → **Leistungen** → **Neu hinzufügen**
+### Services
+```
+[master_services limit="6"]
+```
+Zeigt Services aus dem Custom Post Type "Services" an.
 
 ### Team
-Wird aus dem Custom Post Type **"Team"** geladen. Team-Mitglieder hinzufügen unter:
-**WordPress Admin** → **Team** → **Neu hinzufügen**
-
-### Bewertungen
-Werden aus dem Custom Post Type **"Bewertungen"** geladen. Neue Bewertungen hinzufügen unter:
-**WordPress Admin** → **Bewertungen** → **Neu hinzufügen**
-
-## Shortcodes
-
-Falls Sie die dynamischen Inhalte in anderen Seiten verwenden möchten:
-
 ```
-[physio_services limit="6"]
-[physio_team limit="4"]
-[physio_testimonials limit="4"]
+[master_team limit="4"]
+```
+Zeigt Team-Mitglieder aus dem Custom Post Type "Team" an.
+
+### Testimonials
+```
+[master_testimonials limit="4"]
+```
+Zeigt Testimonials aus dem Custom Post Type "Testimonials" an.
+
+## Custom Post Types
+
+Das Theme registriert folgende Custom Post Types:
+
+### 1. Services
+- **Admin:** WordPress Admin → Services → Neu hinzufügen
+- **Meta-Felder:** Icon, Dauer, Preis
+- **Verwendung:** Für Dienstleistungen und Angebote
+
+### 2. Team
+- **Admin:** WordPress Admin → Team → Neu hinzufügen
+- **Meta-Felder:** Position, Qualifikationen, E-Mail, Telefon
+- **Verwendung:** Für Team-Mitglieder
+
+### 3. Testimonials
+- **Admin:** WordPress Admin → Testimonials → Neu hinzufügen
+- **Meta-Felder:** Autor, Rolle, Bewertung (1-5)
+- **Verwendung:** Für Kundenbewertungen
+
+## Template-Struktur
+
+Das Theme bietet folgende Templates:
+
+- `front-page.php` - Block-Editor-kompatible Startseite
+- `page.php` - Standard-Seitentemplate
+- `single.php` - Blog-Post Template
+- `single-service.php` - Service Detail-Seite
+- `archive-service.php` - Service-Übersicht
+- `template-contact.php` - Kontakt-Seiten-Template
+
+## Technische Details
+
+### Pattern-Lademechanismus
+
+Das Theme lädt automatisch Patterns aus:
+1. `/patterns/` Ordner des Parent-Themes
+2. `/patterns/` Ordner des Child-Themes (wenn vorhanden)
+
+Die Patterns werden in der `init` Action Hook registriert und stehen im Block-Editor zur Verfügung.
+
+### Code-Referenz
+
+- `/inc/block-patterns.php` - Pattern-Registrierungssystem
+- `/inc/shortcodes.php` - Shortcode-Definitionen
+- `/inc/seo-functions.php` - SEO Schema-Markup
+
+## Child-Theme Entwicklung
+
+Master Pro ist als Basis für Child-Themes konzipiert. Alle Funktionen können in Child-Themes erweitert oder überschrieben werden:
+
+```php
+// functions.php im Child-Theme
+function mytheme_setup() {
+    // Eigene Funktionalität hier
+}
+add_action('after_setup_theme', 'mytheme_setup');
 ```
 
-## Zurück zur alten Version
+## Support & Dokumentation
 
-Falls Sie zur statischen Version zurückkehren möchten:
+- Theme folgt WordPress Best Practices
+- Kompatibel mit WordPress 5.8+
+- PHP 7.4+ erforderlich
+- Block-Editor vollständig unterstützt
 
-1. Benennen Sie `front-page.php` um in `front-page-blocks.php`
-2. Benennen Sie `front-page-static.php` um in `front-page.php`
-3. Löschen Sie den Cache (falls ein Cache-Plugin aktiv ist)
+---
 
-## Support
-
-Bei Fragen oder Problemen:
-- Überprüfen Sie, ob alle Plugins aktuell sind
-- Stellen Sie sicher, dass Sie WordPress 5.8+ verwenden
-- Leeren Sie den Browser-Cache nach Änderungen
-
-## Tipps & Tricks
-
-1. **Vorschau**: Nutzen Sie die Vorschau-Funktion im Editor, um Änderungen vor der Veröffentlichung zu sehen
-2. **Reihenfolge ändern**: Experimentieren Sie mit verschiedenen Anordnungen der Sektionen
-3. **Farben**: Nutzen Sie die Theme-Farben für ein konsistentes Design
-4. **Abstände**: Passen Sie Abstände in den Block-Einstellungen an (Rechte Sidebar → Block → Abstand)
-
-Viel Erfolg mit Ihrem neuen flexiblen Block-System! 🎉
+**Master Pro** - Flexible WordPress Master Theme Foundation

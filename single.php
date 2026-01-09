@@ -2,7 +2,7 @@
 /**
  * The template for displaying single posts
  *
- * @package PhysioTherapy_Pro
+ * @package Master_Pro
  */
 
 get_header();
@@ -32,7 +32,7 @@ get_header();
                         <span>•</span>
                         <span>👤 <?php the_author(); ?></span>
                         <span>•</span>
-                        <?php physio_reading_time(); ?>
+                        <?php master_reading_time(); ?>
                         <?php if (has_category()) : ?>
                             <span>•</span>
                             <span>🏷 <?php the_category(', '); ?></span>
@@ -48,7 +48,7 @@ get_header();
                     the_content();
 
                     wp_link_pages(array(
-                        'before' => '<div class="page-links">' . esc_html__('Seiten:', 'physio-therapy-pro'),
+                        'before' => '<div class="page-links">' . esc_html__('Seiten:', 'master-therapy-pro'),
                         'after'  => '</div>',
                     ));
                     ?>
@@ -85,7 +85,7 @@ get_header();
 
         <?php
         // Display related posts
-        physio_related_posts();
+        master_related_posts();
         ?>
 
     <?php endwhile; ?>
